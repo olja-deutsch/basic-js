@@ -1,15 +1,11 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function countCats(matrix) {
-  let countCats = 0;
+    let countCats = [];
 
-    matrix.forEach(levelOneItem => {
-        levelOneItem.forEach(levelTwoItem => {
-            if (levelTwoItem === '^^') {
-                countCats += 1;
-            };
-        })
-    });
+    combinedArray = matrix.flat();
+    
+    countCats = combinedArray.filter(item => item === '^^'); 
 
-    return countCats;
+    return countCats.length;
 };
